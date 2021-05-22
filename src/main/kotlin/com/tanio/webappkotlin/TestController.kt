@@ -12,6 +12,7 @@ class TestController(@Autowired private val testsService: TestsService) {
     @GetMapping("/tests")
     fun tests(model: Model): String {
         model["title"] = testsService.getTitle()
+        model["tests"] = testsService.getTests()
         return "tests"
     }
 
